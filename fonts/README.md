@@ -28,13 +28,13 @@
 #### HTML
 
 ```html
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/ayaan-fonts/Paperlogy@v1.000/fonts/webfonts/Paperlogy-dynamic-subset.css" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/ayaan-fonts/Paperlogy@v1.000/fonts/webfonts/Paperlogy-subset.css" />
 ```
 
 #### CSS
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/ayaan-fonts/Paperlogy@v1.000/fonts/webfonts/Paperlogy-dynamic-subset.css");
+@import url("https://cdn.jsdelivr.net/gh/ayaan-fonts/Paperlogy@v1.000/fonts/webfonts/Paperlogy-subset.css");
 ```
 
 ---
