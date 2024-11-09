@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 100;
+
+    src: local("Paperlogy 1Thin"), local("Paperlogy"), url("./woff2/Paperlogy-1Thin.woff2") format("woff2"), url("./woff/Paperlogy-1Thin.woff") format("woff"), url("./truetype/Paperlogy-1Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 200;
+
+    src: local("Paperlogy 2ExtraLight"), local("Paperlogy"), url("./woff2/Paperlogy-2ExtraLight.woff2") format("woff2"), url("./woff/Paperlogy-2ExtraLight.woff") format("woff"), url("./truetype/Paperlogy-2ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 300;
+
+    src: local("Paperlogy 3Light"), local("Paperlogy"), url("./woff2/Paperlogy-3Light.woff2") format("woff2"), url("./woff/Paperlogy-3Light.woff") format("woff"), url("./truetype/Paperlogy-3Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 400;
+
+    src: local("Paperlogy 4Regular"), local("Paperlogy"), url("./woff2/Paperlogy-4Regular.woff2") format("woff2"), url("./woff/Paperlogy-4Regular.woff") format("woff"), url("./truetype/Paperlogy-4Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 500;
+
+    src: local("Paperlogy 5Medium"), local("Paperlogy"), url("./woff2/Paperlogy-5Medium.woff2") format("woff2"), url("./woff/Paperlogy-5Medium.woff") format("woff"), url("./truetype/Paperlogy-5Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 600;
+
+    src: local("Paperlogy 6SemiBold"), local("Paperlogy"), url("./woff2/Paperlogy-6SemiBold.woff2") format("woff2"), url("./woff/Paperlogy-6SemiBold.woff") format("woff"), url("./truetype/Paperlogy-6SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 700;
+
+    src: local("Paperlogy 7Bold"), local("Paperlogy"), url("./woff2/Paperlogy-7Bold.woff2") format("woff2"), url("./woff/Paperlogy-7Bold.woff") format("woff"), url("./truetype/Paperlogy-7Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 800;
+
+    src: local("Paperlogy 8ExtraBold"), local("Paperlogy"), url("./woff2/Paperlogy-8ExtraBold.woff2") format("woff2"), url("./woff/Paperlogy-8ExtraBold.woff") format("woff"), url("./truetype/Paperlogy-8ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 900;
+
+    src: local("Paperlogy 9Black"), local("Paperlogy"), url("./woff2/Paperlogy-9Black.woff2") format("woff2"), url("./woff/Paperlogy-9Black.woff") format("woff"), url("./truetype/Paperlogy-9Black.ttf") format("truetype");
+}

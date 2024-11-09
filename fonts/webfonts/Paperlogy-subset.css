@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 100;
+
+    src: local("Paperlogy 1Thin"), local("Paperlogy"), url("./woff2-subset/Paperlogy-1Thin.subset.woff2") format("woff2"), url("./woff-subset/Paperlogy-1Thin.subset.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 200;
+
+    src: local("Paperlogy 2ExtraLight"), local("Paperlogy"), url("./woff2-subset/Paperlogy-2ExtraLight.subset.woff2") format("woff2"), url("./woff-subset/Paperlogy-2ExtraLight.subset.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 300;
+
+    src: local("Paperlogy 3Light"), local("Paperlogy"), url("./woff2-subset/Paperlogy-3Light.subset.woff2") format("woff2"), url("./woff-subset/Paperlogy-3Light.subset.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 400;
+
+    src: local("Paperlogy 4Regular"), local("Paperlogy"), url("./woff2-subset/Paperlogy-4Regular.subset.woff2") format("woff2"), url("./woff-subset/Paperlogy-4Regular.subset.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 500;
+
+    src: local("Paperlogy 5Medium"), local("Paperlogy"), url("./woff2-subset/Paperlogy-5Medium.subset.woff2") format("woff2"), url("./woff-subset/Paperlogy-5Medium.subset.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 600;
+
+    src: local("Paperlogy 6SemiBold"), local("Paperlogy"), url("./woff2-subset/Paperlogy-6SemiBold.subset.woff2") format("woff2"), url("./woff-subset/Paperlogy-6SemiBold.subset.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 700;
+
+    src: local("Paperlogy 7Bold"), local("Paperlogy"), url("./woff2-subset/Paperlogy-7Bold.subset.woff2") format("woff2"), url("./woff-subset/Paperlogy-7Bold.subset.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 800;
+
+    src: local("Paperlogy 8ExtraBold"), local("Paperlogy"), url("./woff2-subset/Paperlogy-8ExtraBold.subset.woff2") format("woff2"), url("./woff-subset/Paperlogy-8ExtraBold.subset.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Paperlogy";
+    font-weight: 900;
+
+    src: local("Paperlogy 9Black"), local("Paperlogy"), url("./woff2-subset/Paperlogy-9Black.subset.woff2") format("woff2"), url("./woff-subset/Paperlogy-9Black.subset.woff") format("woff");
+}
