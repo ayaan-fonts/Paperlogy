@@ -2,7 +2,7 @@
 // == Copyright 2023 by Orioncactus & Black7345 ==
 
 import { basename, extname, join } from "node:path";
-import { mkdir, access, rm } from "fs/promises";
+import { mkdir, rm } from "node:fs/promises";
 import { fontPipe, FontPipeI } from "font-range";
 
 // == Types ===================================================================
@@ -15,15 +15,31 @@ export interface IFontInfo {
 }
 
 export type Tformat = "woff" | "woff2";
-export type TPathKinds = "Static";
 export type TSubsetKinds = "static" | "glyph" | "dynamic";
 
 // == Constants ===============================================================
-const STATIC_PATH = join(process.cwd(), "..", "..", "fonts", "truetype");
-const STATIC_OUTPUT_PATH = join(process.cwd(), "..", "..", "fonts", "webfonts");
+// Official releases ship woff2 already, so that's the subsetting source.
+// The ttf files under fonts/truetype are kept only as a fallback format in
+// the (hand-maintained) static full-font CSS and are untouched by this pipeline.
+const SOURCE_PATH = join(
+  process.cwd(),
+  "..",
+  "..",
+  "fonts",
+  "webfonts",
+  "woff2",
+);
+const OUTPUT_PATH = join(
+  process.cwd(),
+  "..",
+  "..",
+  "fonts",
+  "webfonts",
+);
 
 export enum FONTFAMILY {
   Paperlogy = "Paperlogy",
+  PaperlogyJP = "PaperlogyJP",
 }
 
 const FONTWEIGHTS = [
@@ -40,13 +56,8 @@ const FONTWEIGHTS = [
 
 // == Functions ===============================================================
 export async function clearDir(outDir: string) {
-  try {
-    await access(outDir);
-    await rm(outDir, { recursive: true, force: true });
-    await mkdir(outDir);
-  } catch (err) {
-    await mkdir(outDir);
-  }
+  await rm(outDir, { recursive: true, force: true });
+  await mkdir(outDir, { recursive: true });
 }
 
 function getOutInfo(kinds: TSubsetKinds, format: Tformat) {
@@ -72,13 +83,13 @@ function getOutInfo(kinds: TSubsetKinds, format: Tformat) {
 async function createOption(
   kinds: TSubsetKinds,
   format: Tformat,
-  fontInfo: IFontInfo
+  fontInfo: IFontInfo,
 ) {
   // Get Infos
   const { fontList } = fontInfo;
 
-  const basePath = STATIC_PATH;
-  const distPath = STATIC_OUTPUT_PATH;
+  const basePath = SOURCE_PATH;
+  const distPath = OUTPUT_PATH;
 
   const { outType, outName } = getOutInfo(kinds, format);
   const outDir = join(distPath, outType);
@@ -88,7 +99,8 @@ async function createOption(
 
   // Create Options
   const baseLogFormat = "Convert {ORIGIN} -> {OUTPUT}";
-  const groupLogFormat = `\n== ${kinds} ${outType} ======\n` + baseLogFormat;
+  const groupLogFormat =
+    `\n== ${kinds} ${outType} ======\n` + baseLogFormat;
   const baseOption = {
     format: format === "woff" ? "woff-zopfli" : format,
     saveDir: outDir,
@@ -107,7 +119,10 @@ async function createOption(
     } as Required<FontPipeI>;
 
     if (kinds === "glyph") {
-      fontOption.option.textFile = join(process.cwd(), "subset_glyphs.txt");
+      fontOption.option.textFile = join(
+        process.cwd(),
+        "subset_glyphs.txt",
+      );
     }
     if (kinds === "dynamic") {
       fontOption.option.cssFile = join(distPath, fontName + ".css");
@@ -119,16 +134,19 @@ async function createOption(
 
 // == Main ====================================================================
 export function getFontList(family = FONTFAMILY.Paperlogy) {
-  const extResult = ".ttf";
   const fontList = FONTWEIGHTS.map(
-    (weight) => family + "-" + weight + extResult
+    (weight) => `${family}-${weight}.woff2`,
   );
 
   return { family, fontList };
 }
 
-export async function subsets<T>(...subsetList: Parameters<ISubsets<T>>[]) {
-  const options = subsetList.map(async (info) => await createOption(...info));
+export async function subsets<T>(
+  ...subsetList: Parameters<ISubsets<T>>[]
+) {
+  const options = subsetList.map(
+    async (info) => await createOption(...info),
+  );
 
   await fontPipe((await Promise.all(options)).flat());
 }

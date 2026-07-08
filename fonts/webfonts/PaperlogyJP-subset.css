@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Paperlogy JP';
+    font-weight: 100;
+
+    src: local('PaperlogyJP 1Thin'), local('Paperlogy JP'), url('./woff2-subset/PaperlogyJP-1Thin.subset.woff2') format('woff2'), url('./woff-subset/PaperlogyJP-1Thin.subset.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Paperlogy JP';
+    font-weight: 200;
+
+    src: local('PaperlogyJP 2ExtraLight'), local('Paperlogy JP'), url('./woff2-subset/PaperlogyJP-2ExtraLight.subset.woff2') format('woff2'), url('./woff-subset/PaperlogyJP-2ExtraLight.subset.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Paperlogy JP';
+    font-weight: 300;
+
+    src: local('PaperlogyJP 3Light'), local('Paperlogy JP'), url('./woff2-subset/PaperlogyJP-3Light.subset.woff2') format('woff2'), url('./woff-subset/PaperlogyJP-3Light.subset.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Paperlogy JP';
+    font-weight: 400;
+
+    src: local('PaperlogyJP 4Regular'), local('Paperlogy JP'), url('./woff2-subset/PaperlogyJP-4Regular.subset.woff2') format('woff2'), url('./woff-subset/PaperlogyJP-4Regular.subset.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Paperlogy JP';
+    font-weight: 500;
+
+    src: local('PaperlogyJP 5Medium'), local('Paperlogy JP'), url('./woff2-subset/PaperlogyJP-5Medium.subset.woff2') format('woff2'), url('./woff-subset/PaperlogyJP-5Medium.subset.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Paperlogy JP';
+    font-weight: 600;
+
+    src: local('PaperlogyJP 6SemiBold'), local('Paperlogy JP'), url('./woff2-subset/PaperlogyJP-6SemiBold.subset.woff2') format('woff2'), url('./woff-subset/PaperlogyJP-6SemiBold.subset.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Paperlogy JP';
+    font-weight: 700;
+
+    src: local('PaperlogyJP 7Bold'), local('Paperlogy JP'), url('./woff2-subset/PaperlogyJP-7Bold.subset.woff2') format('woff2'), url('./woff-subset/PaperlogyJP-7Bold.subset.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Paperlogy JP';
+    font-weight: 800;
+
+    src: local('PaperlogyJP 8ExtraBold'), local('Paperlogy JP'), url('./woff2-subset/PaperlogyJP-8ExtraBold.subset.woff2') format('woff2'), url('./woff-subset/PaperlogyJP-8ExtraBold.subset.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Paperlogy JP';
+    font-weight: 900;
+
+    src: local('PaperlogyJP 9Black'), local('Paperlogy JP'), url('./woff2-subset/PaperlogyJP-9Black.subset.woff2') format('woff2'), url('./woff-subset/PaperlogyJP-9Black.subset.woff') format('woff');
+}

@@ -1,19 +1,41 @@
-import { FONTFAMILY, getFontList, subsets } from "./subset-utils";
+import {
+  FONTFAMILY,
+  getFontList,
+  IFontInfo,
+  subsets,
+  Tformat,
+  TSubsetKinds,
+} from "./subset-utils";
 
-const jobs = [
-  getFontList(FONTFAMILY.Paperlogy),
+// subset_glyphs.txt only covers Korean/English glyphs, so the language-based
+// static subset ("glyph") is skipped for PaperlogyJP.
+const fontLists: { fontList: IFontInfo; withGlyphSubset: boolean }[] = [
+  { fontList: getFontList(FONTFAMILY.Paperlogy), withGlyphSubset: true },
+  { fontList: getFontList(FONTFAMILY.PaperlogyJP), withGlyphSubset: false },
 ];
 
-jobs.forEach((fontList) => {
-  subsets(
-    // woff
+// Every family shares the same output folders (woff/, glyph-subset/, ...),
+// so all families must go through a single subsets() call - each call clears
+// its output folders from scratch, and a per-family call would wipe out the
+// previous family's files.
+const jobs = fontLists.flatMap(
+  ({ fontList, withGlyphSubset }): [TSubsetKinds, Tformat, IFontInfo][] => [
+    // Static full-glyph webfont. woff2 already ships as the official
+    // release, so only woff needs to be generated here.
     ["static", "woff", fontList],
-    ["glyph", "woff", fontList],
-    ["dynamic", "woff", fontList],
 
-    // woff2
-    ["static", "woff2", fontList],
-    ["glyph", "woff2", fontList],
-    ["dynamic", "woff2", fontList]
-  );
-});
+    // Language-based static subset
+    ...(withGlyphSubset
+      ? ([
+          ["glyph", "woff", fontList],
+          ["glyph", "woff2", fontList],
+        ] as [TSubsetKinds, Tformat, IFontInfo][])
+      : []),
+
+    // Per-request dynamic subset (Google Fonts style)
+    ["dynamic", "woff", fontList],
+    ["dynamic", "woff2", fontList],
+  ],
+);
+
+subsets(...jobs);
